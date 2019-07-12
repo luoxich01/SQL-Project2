@@ -23,4 +23,5 @@ For example, given the above Scores table, your query should generate the follow
 | 3.50  | 4    |
 +-------+------+
 
-
+# Write your MySQL query statement below
+SELECT Score, DENSE_RANK() OVER (ORDER BY Score DESC) Rank FROM Scores
