@@ -33,7 +33,7 @@ Max and Jim both have the highest salary in the IT department and Henry has the 
 # Write your MySQL query statement below
 WITH Combine AS
 (SELECT a.Id AS Id, a.Name AS Name, a.Salary AS Salary, b.Department AS Department 
- FROM Employee a LEFT JOIN Department b ON a.Id=b.Id)
+ FROM Employee a LEFT JOIN Department b ON a.DepartmentId=b.Id)
  
 SELECT Department, Employee, Salary FROM 
 (SELECT *, DENSE_RANK() OVER (PARTITION BY Department) AS Ranking FROM Combine
